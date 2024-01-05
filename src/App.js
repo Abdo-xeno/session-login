@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import { useNavigate, Routes, Route } from 'react-router-dom';
+
 
 function App() {
+
+  const navigate = useNavigate();
+
+  const checkAuthentication = () => {
+    const isAuthenticated = localStorage.getItem('currentUser');
+
+    if (isAuthenticated) {
+      // Si l'utilisateur est authentifié, redirige vers la page de déconnexion
+      navigate('/logout');
+    } else {
+      // Sinon, redirige vers la page de connexion
+      navigate('/login');
+    }
+  };
+  useEffect(() => {
+    checkAuthentication()
+    },[navigate])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+         <div></div>
   );
 }
 
