@@ -9,7 +9,7 @@ export default function Logout () {
   const navigate = useNavigate ();
 
   const handleLogout = () => {
-    // Rediriger vers la page de déconnexion
+    // Rediriger vers la page de connexion
     navigate(`/login`);
     localStorage.setItem('currentUser', "");
   };
