@@ -5,7 +5,8 @@ export default function LoginForm ({logUser}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     logUser(email,password)
   }
 

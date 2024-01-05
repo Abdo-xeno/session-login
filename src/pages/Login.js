@@ -11,8 +11,8 @@ export default function Login() {
         // Vérifiez si la réponse est réussie
         if (response.status === 201 || response.status === 200) {
           // Vous pouvez également retourner des données spécifiques de la réponse si nécessaire
-          navigate(`/logout?username=${email}`);
           localStorage.setItem('currentUser', email);
+          navigate(`/logout?username=${email}`);
         } else {
           throw new Error('Authentication failed'); // Générer une erreur si la réponse n'est pas réussie
         }
