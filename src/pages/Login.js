@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { authenticateUser } from '../services/AuthenticateUser';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
