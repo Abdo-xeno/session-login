@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import AlertConnexion from '../components/AlertConnexion';
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('currentUser') !== "";
@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
     return children;
   } else {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-    return <Box>Vous n'êtes pas autorisé à accéder à cette page</Box>
+    return <AlertConnexion />
   }
 };
 
