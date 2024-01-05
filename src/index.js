@@ -10,10 +10,6 @@ import App from './App';
 import Logout from './pages/Logout';
 import Login from './pages/Login';
 
-const isAuthenticated = localStorage.getItem('currentUser');
-
-const initialPath = isAuthenticated ? '/logout' : '/login';
-
 const routes = [
   {
     path: "/",
@@ -30,9 +26,7 @@ const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes, {
-  initialEntries: [initialPath],
-});
+const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
